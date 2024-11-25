@@ -67,62 +67,62 @@ const AppContent = () => {
     }, [location.pathname]);
 
     return (
-        <>
-            {login && <Navbar login={login} handleLogin={handleLogin} username={username} role={role} handleLogout={handleLogout} />}
-            <Routes>
-                <Route exact path='/fronteuc' element={<LoginForm login={login} handleLogin={handleLogin} />} />
-                <Route
-                    path="/inicio"
-                    element={
-                        role === ROLES.ADMIN ? (
-                            <HomePage username={username} />
-                        ) : role === ROLES.SELLER && (
-                            <HomePageSeller username={username} />
-                        )
-                    }
-                />
-                <Route path='/config' element={<Config userRol={role} username={username} handleLogout={handleLogout} />} />
-                <Route path='/config/login-to-change-password' element={<LoginFormChangePswd handleLogin={handleLogin} />} />
-                <Route path='/config/send-email-password' element={<SendEmailPassword />} />
-                <Route path='/config/check-token-password' element={<CheckPswdToken />} />
-                <Route path='/config/recovery-update-password' element={<RecoveryUpdatePassword />} />
-                <Route path='/config/update-password' element={<UpdatePassword username={username} />} />
-                <Route path='/personal*' element={<Personal />} />
-                <Route path="/registrar-vendedor" element={<RegisterSeller />} />
-                <Route path="/registrar-proveedor" element={<RegisterProvider />} />
-                <Route path="/modificar/proveedor/:id" element={<ModifyProvider />} />
-                <Route path="/modificar/vendedor/:id" element={<ModifySeller />} />
-                <Route path='/productos*' element={<Products role={role} />} />
-                <Route path='/productos/escoger-proveedor' element={<ChooseProvider />} />
-                <Route path="/productos/registrar/:id" element={<RegisterProduct />} />
-                <Route path="/modificar/producto/:id" element={<ModidyProducts />} />
-                <Route path="/compra/proveedor" element={<ChooseProviderPurchase />} />
-                <Route path="/compra/productos/:id" element={<ChooseProductsPurchase />} />
-                <Route path="/compra/info-prod/:id" element={<FormRegisterDetailsProduct />} />
-                <Route path="/compra/factura" element={<BillPurchase />} />
-                <Route path="/nueva-venta" element={<AddProductSale />} />
-                <Route path="/registrar-venta" element={<RegisterSale />} />
-                <Route path="/factura-venta" element={<BillSale />} />
-                <Route path="/productos-vendidos" element={<ReportPage />} />
-                <Route path="/reportes" element={<ReportTransactions />} />
-            </Routes>
-        </>
+        <div>
+            <Router basename='/fronteuc'>
+                {login && <Navbar login={login} handleLogin={handleLogin} username={username} role={role} handleLogout={handleLogout} />}
+                <Routes>
+                    <Route exact path='/fronteuc' element={<LoginForm login={login} handleLogin={handleLogin} />} />
+                    <Route
+                        path="/inicio"
+                        element={
+                            role === ROLES.ADMIN ? (
+                                <HomePage username={username} />
+                            ) : role === ROLES.SELLER && (
+                                <HomePageSeller username={username} />
+                            )
+                        }
+                    />
+                    <Route path='/config' element={<Config userRol={role} username={username} handleLogout={handleLogout} />} />
+                    <Route path='/config/login-to-change-password' element={<LoginFormChangePswd handleLogin={handleLogin} />} />
+                    <Route path='/config/send-email-password' element={<SendEmailPassword />} />
+                    <Route path='/config/check-token-password' element={<CheckPswdToken />} />
+                    <Route path='/config/recovery-update-password' element={<RecoveryUpdatePassword />} />
+                    <Route path='/config/update-password' element={<UpdatePassword username={username} />} />
+                    <Route path='/personal*' element={<Personal />} />
+                    <Route path="/registrar-vendedor" element={<RegisterSeller />} />
+                    <Route path="/registrar-proveedor" element={<RegisterProvider />} />
+                    <Route path="/modificar/proveedor/:id" element={<ModifyProvider />} />
+                    <Route path="/modificar/vendedor/:id" element={<ModifySeller />} />
+                    <Route path='/productos*' element={<Products role={role} />} />
+                    <Route path='/productos/escoger-proveedor' element={<ChooseProvider />} />
+                    <Route path="/productos/registrar/:id" element={<RegisterProduct />} />
+                    <Route path="/modificar/producto/:id" element={<ModidyProducts />} />
+                    <Route path="/compra/proveedor" element={<ChooseProviderPurchase />} />
+                    <Route path="/compra/productos/:id" element={<ChooseProductsPurchase />} />
+                    <Route path="/compra/info-prod/:id" element={<FormRegisterDetailsProduct />} />
+                    <Route path="/compra/factura" element={<BillPurchase />} />
+                    <Route path="/nueva-venta" element={<AddProductSale />} />
+                    <Route path="/registrar-venta" element={<RegisterSale />} />
+                    <Route path="/factura-venta" element={<BillSale />} />
+                    <Route path="/productos-vendidos" element={<ReportPage />} />
+                    <Route path="/reportes" element={<ReportTransactions />} />
+                </Routes>
+            </Router>
+        </div>
     );
 }
 
 const App = () => {
     return (
-        <Router basename='/fronteuc'>
-            <EmailProvider>
-                <VerifCodeProvider>
-                    <ButtonProvider>
-                        <ProductProvider>
-                            <AppContent />
-                        </ProductProvider>
-                    </ButtonProvider>
-                </VerifCodeProvider>
-            </EmailProvider>
-        </Router>
+        <EmailProvider>
+            <VerifCodeProvider>
+                <ButtonProvider>
+                    <ProductProvider>
+                        <AppContent />
+                    </ProductProvider>
+                </ButtonProvider>
+            </VerifCodeProvider>
+        </EmailProvider>
     );
 }
 
