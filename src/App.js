@@ -112,7 +112,7 @@ const AppContent = () => {
 
 const App = () => {
     return (
-        <Router>
+        <Router basename='fronteuc'>
             <EmailProvider>
                 <VerifCodeProvider>
                     <ButtonProvider>

@@ -2,7 +2,7 @@
   "homepage": "https://lili195.github.io/fronteuc",
   "name": "front",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
