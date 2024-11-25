@@ -68,10 +68,10 @@ const AppContent = () => {
 
     return (
         <div>
-            <Router basename='/fronteuc'>
+            <Router basename='/fronteuc/'>
                 {login && <Navbar login={login} handleLogin={handleLogin} username={username} role={role} handleLogout={handleLogout} />}
                 <Routes>
-                    <Route exact path='/fronteuc' element={<LoginForm login={login} handleLogin={handleLogin} />} />
+                    <Route exact path='/fronteuc/' element={<LoginForm login={login} handleLogin={handleLogin} />} />
                     <Route
                         path="/inicio"
                         element={
