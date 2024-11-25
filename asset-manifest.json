@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/fronteuc/static/css/main.a36d24bc.css",
+    "main.js": "/fronteuc/static/js/main.52adfcd2.js",
+    "static/js/453.c2b2afdb.chunk.js": "/fronteuc/static/js/453.c2b2afdb.chunk.js",
+    "static/media/FondoLogin.png": "/fronteuc/static/media/FondoLogin.c566a8e8a2d195819924.png",
+    "static/media/logo2.png": "/fronteuc/static/media/logo2.e96f63fa0a6de49c9c78.png",
+    "static/media/visionImg.png": "/fronteuc/static/media/visionImg.66fa0a7badaf4d1867d3.png",
+    "static/media/logo.jpg": "/fronteuc/static/media/logo.38d13d9953fdc9f4c634.jpg",
+    "static/media/logoInterfaces.png": "/fronteuc/static/media/logoInterfaces.339bbb2bdbf5b543bf63.png",
+    "static/media/valuesImg.png": "/fronteuc/static/media/valuesImg.3aa0581e17536724d2c3.png",
+    "index.html": "/fronteuc/index.html",
+    "main.a36d24bc.css.map": "/fronteuc/static/css/main.a36d24bc.css.map",
+    "main.52adfcd2.js.map": "/fronteuc/static/js/main.52adfcd2.js.map",
+    "453.c2b2afdb.chunk.js.map": "/fronteuc/static/js/453.c2b2afdb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a36d24bc.css",
+    "static/js/main.52adfcd2.js"
+  ]
+}
