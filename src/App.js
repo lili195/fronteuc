@@ -54,7 +54,7 @@ const AppContent = () => {
     };
 
     useEffect(() => {
-        if (location.pathname === '/' ||
+        if (location.pathname === '/fronteuc' ||
             location.pathname === '/config/login-to-change-password' ||
             location.pathname === '/config/send-email-password' ||
             location.pathname === '/config/check-token-password' ||
@@ -70,7 +70,7 @@ const AppContent = () => {
         <>
             {login && <Navbar login={login} handleLogin={handleLogin} username={username} role={role} handleLogout={handleLogout} />}
             <Routes>
-                <Route path='/' element={<LoginForm login={login} handleLogin={handleLogin} />} />
+                <Route exact path='/fronteuc' element={<LoginForm login={login} handleLogin={handleLogin} />} />
                 <Route
                     path="/inicio"
                     element={
@@ -112,7 +112,7 @@ const AppContent = () => {
 
 const App = () => {
     return (
-        <Router basename='fronteuc'>
+        <Router basename='/fronteuc'>
             <EmailProvider>
                 <VerifCodeProvider>
                     <ButtonProvider>
